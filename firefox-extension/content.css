@@ -1,0 +1,269 @@
+/**
+ * Gemini Screen Translator (G.S.T) - Content Styles
+ * Design: Preto Fosco (#08080a), Estritamente Quadrado (border-radius: 0), Minimalista
+ * Exclusivo para Firefox Desktop (sem mobile, sem balão na captura, sem quadrado ao lado do X)
+ */
+
+/* 1. Overlay de Seleção Escurecido Limpo (Sem balão ou barras intrusivas) */
+.gemini-trans-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(2px) !important;
+  z-index: 2147483646 !important;
+  cursor: crosshair !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.gemini-trans-box {
+  position: absolute !important;
+  border: 1.5px solid #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.5) !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+  border-radius: 0px !important;
+}
+
+/* 2. Janela de Tradução Flutuante (Preto Fosco, Estritamente Quadrada, Minimalista) */
+.gemini-trans-panel {
+  position: fixed !important;
+  min-width: 180px !important;
+  min-height: 70px !important;
+  max-width: calc(100vw - 16px) !important;
+  max-height: calc(100vh - 16px) !important;
+  background: #08080a !important;
+  color: #ededed !important;
+  border-radius: 0px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.95) !important;
+  z-index: 2147483647 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  resize: both !important;
+  box-sizing: border-box !important;
+  animation: geminiFade 0.12s ease-out !important;
+}
+
+/* Handle de Redimensionamento Suave no Canto Inferior Direito */
+.gemini-trans-resizer {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  cursor: nwse-resize !important;
+  z-index: 2147483647 !important;
+  user-select: none !important;
+}
+
+.gemini-trans-resizer::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 3px !important;
+  bottom: 3px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
+  transition: border-color 0.15s !important;
+}
+
+.gemini-trans-resizer:hover::after,
+.gemini-trans-resizer:active::after {
+  border-color: #ffffff !important;
+}
+
+@keyframes geminiFade {
+  from { opacity: 0; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Barra de Tarefas Superior Única */
+.gemini-trans-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  padding: 0 8px 0 10px !important;
+  background: #0c0c0e !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  user-select: none !important;
+  cursor: grab !important;
+  box-sizing: border-box !important;
+}
+
+.gemini-trans-header:active {
+  cursor: grabbing !important;
+}
+
+/* Nome Interativo Fixo à Esquerda */
+.gemini-trans-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.1px !important;
+}
+
+/* Indicador Quadrado Branco Sólido */
+.gemini-trans-dot {
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 0px !important;
+  background: #ffffff !important;
+  flex-shrink: 0 !important;
+}
+
+.gemini-trans-interactive-name {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+/* Três pontos animados fazendo o papel do spinner */
+.gemini-trans-dots {
+  display: inline-flex !important;
+  margin-left: 1px !important;
+  letter-spacing: 1px !important;
+}
+
+.gemini-trans-dots span {
+  animation: geminiDotPulse 1.2s infinite ease-in-out !important;
+  display: inline-block !important;
+}
+
+.gemini-trans-dots span:nth-child(1) {
+  animation-delay: 0s !important;
+}
+
+.gemini-trans-dots span:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.gemini-trans-dots span:nth-child(3) {
+  animation-delay: 0.4s !important;
+}
+
+@keyframes geminiDotPulse {
+  0%, 80%, 100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+/* Lado Direito da Barra de Tarefas: Somente o botão Fechar (sem quadrado de idioma ou erro) */
+.gemini-trans-header-actions {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.gemini-trans-btn-icon {
+  background: transparent !important;
+  border: none !important;
+  color: #8b8b93 !important;
+  font-size: 12px !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 0px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.15s !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.gemini-trans-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* 3. Corpo Único da Janela: Apenas o Texto Traduzido */
+.gemini-trans-body {
+  flex: 1 !important;
+  min-height: 0 !important;
+  padding: 10px 12px 14px 12px !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  background: #08080a !important;
+}
+
+.gemini-trans-body::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.gemini-trans-body::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.gemini-trans-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-radius: 0px !important;
+}
+
+.gemini-trans-content {
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+  color: #f4f4f5 !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  user-select: text !important;
+  flex: 1 !important;
+}
+
+.gemini-trans-error-text {
+  font-size: 11.5px !important;
+  color: #f87171 !important;
+  line-height: 1.4 !important;
+}
+
+/* Toast Notificação Discreto Quadrado */
+.gemini-trans-toast {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background: #0c0c0e !important;
+  color: #f4f4f5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0px !important;
+  padding: 7px 12px !important;
+  font-size: 11px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8) !important;
+  z-index: 2147483647 !important;
+  max-width: 320px !important;
+  animation: geminiFade 0.12s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gemini-trans-panel,
+  .gemini-trans-toast,
+  .gemini-trans-dots span {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#7C3AED" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="96" height="96" rx="22" fill="url(#bg)"/>
+  <!-- Focus / Crop Box -->
+  <rect x="18" y="18" width="60" height="60" rx="8" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="6 4" opacity="0.6"/>
+  <!-- Central Gemini Star -->
+  <path d="M48 24 L53 43 L72 48 L53 53 L48 72 L43 53 L24 48 L43 43 Z" fill="#FFFFFF" filter="url(#glow)"/>
+</svg>

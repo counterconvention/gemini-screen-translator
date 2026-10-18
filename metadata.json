@@ -1,0 +1,8 @@
+{
+  "name": "Remix Gemini Screen Translator - Firefox Extension \u0026 Playground",
+  "description": "Extensão para Firefox Desktop com captura de área de ecrã e tradução visual instantânea via Google Gemini 3.5 Flash Lite API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
